@@ -15,6 +15,11 @@
 		73992ABA23E042CA001C6D83 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73992AB823E042CA001C6D83 /* LaunchScreen.storyboard */; };
 		73992AC223E0445E001C6D83 /* PersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73992AC123E0445E001C6D83 /* PersonViewController.swift */; };
 		73992AC423E04475001C6D83 /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73992AC323E04475001C6D83 /* ItemViewController.swift */; };
+		73992AD723E04EC0001C6D83 /* Person+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73992AD323E04EC0001C6D83 /* Person+CoreDataClass.swift */; };
+		73992AD823E04EC0001C6D83 /* Person+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73992AD423E04EC0001C6D83 /* Person+CoreDataProperties.swift */; };
+		73992AD923E04EC0001C6D83 /* Item+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73992AD523E04EC0001C6D83 /* Item+CoreDataClass.swift */; };
+		73992ADA23E04EC0001C6D83 /* Item+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73992AD623E04EC0001C6D83 /* Item+CoreDataProperties.swift */; };
+		73992ADC23E04EFD001C6D83 /* PersistanceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73992ADB23E04EFD001C6D83 /* PersistanceService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +33,11 @@
 		73992ABB23E042CA001C6D83 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		73992AC123E0445E001C6D83 /* PersonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonViewController.swift; sourceTree = "<group>"; };
 		73992AC323E04475001C6D83 /* ItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
+		73992AD323E04EC0001C6D83 /* Person+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Person+CoreDataClass.swift"; sourceTree = "<group>"; };
+		73992AD423E04EC0001C6D83 /* Person+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Person+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		73992AD523E04EC0001C6D83 /* Item+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataClass.swift"; sourceTree = "<group>"; };
+		73992AD623E04EC0001C6D83 /* Item+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		73992ADB23E04EFD001C6D83 /* PersistanceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +54,10 @@
 		73992A9E23E042C2001C6D83 = {
 			isa = PBXGroup;
 			children = (
+				73992AD323E04EC0001C6D83 /* Person+CoreDataClass.swift */,
+				73992AD423E04EC0001C6D83 /* Person+CoreDataProperties.swift */,
+				73992AD523E04EC0001C6D83 /* Item+CoreDataClass.swift */,
+				73992AD623E04EC0001C6D83 /* Item+CoreDataProperties.swift */,
 				73992AA923E042C3001C6D83 /* CoredataRelationship */,
 				73992AA823E042C3001C6D83 /* Products */,
 			);
@@ -69,6 +83,7 @@
 				73992AB323E042C3001C6D83 /* CoredataRelationship.xcdatamodeld */,
 				73992AC123E0445E001C6D83 /* PersonViewController.swift */,
 				73992AC323E04475001C6D83 /* ItemViewController.swift */,
+				73992ADB23E04EFD001C6D83 /* PersistanceService.swift */,
 			);
 			path = CoredataRelationship;
 			sourceTree = "<group>";
@@ -144,11 +159,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73992AD823E04EC0001C6D83 /* Person+CoreDataProperties.swift in Sources */,
 				73992AAB23E042C3001C6D83 /* AppDelegate.swift in Sources */,
 				73992AB523E042C3001C6D83 /* CoredataRelationship.xcdatamodeld in Sources */,
+				73992AD723E04EC0001C6D83 /* Person+CoreDataClass.swift in Sources */,
 				73992AC423E04475001C6D83 /* ItemViewController.swift in Sources */,
 				73992AAD23E042C3001C6D83 /* SceneDelegate.swift in Sources */,
+				73992ADA23E04EC0001C6D83 /* Item+CoreDataProperties.swift in Sources */,
+				73992AD923E04EC0001C6D83 /* Item+CoreDataClass.swift in Sources */,
 				73992AC223E0445E001C6D83 /* PersonViewController.swift in Sources */,
+				73992ADC23E04EFD001C6D83 /* PersistanceService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

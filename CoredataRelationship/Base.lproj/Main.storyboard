@@ -19,7 +19,7 @@
                                 <rect key="frame" x="0.0" y="64" width="414" height="798"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="P0U-3U-gXk">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="P0U-3U-gXk">
                                         <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="P0U-3U-gXk" id="lDg-GI-SsY">
@@ -28,6 +28,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="GD5-ID-O5F"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="lx0-77-Y6u"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -39,6 +43,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="tableview" destination="uzI-Mt-0S9" id="IUd-Dc-OOz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -76,6 +83,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cHA-QU-N2F"/>
                     </view>
+                    <navigationItem key="navigationItem" id="d2q-ih-UW7"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wm0-Xw-8iM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

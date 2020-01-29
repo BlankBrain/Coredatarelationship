@@ -22,7 +22,6 @@ class ItemViewController: UIViewController , UITableViewDelegate , UITableViewDa
     @IBOutlet weak var personName: UILabel!
     @IBOutlet weak var tableview: UITableView!
     @IBOutlet weak var itemForAdd: UITextField!
-    @IBOutlet weak var itemForDelete: UITextField!
     @IBOutlet weak var message: UILabel!
     
     
@@ -46,14 +45,12 @@ class ItemViewController: UIViewController , UITableViewDelegate , UITableViewDa
         person.addToItems(item)
          PersistanceServic.saveContext()
          self.tableview.reloadData()
+        self.message.text = item.name! + " Added successfully!!"
         
         
     }
     
-    @IBAction func deleteItem(_ sender: Any) {
-        
-        
-    }
+
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         numberOfCellsTable = person.items?.count ?? 0
@@ -66,16 +63,16 @@ class ItemViewController: UIViewController , UITableViewDelegate , UITableViewDa
         return cell
     }
     
-    func loadItems()  {
-        
-        let fetchRequest : NSFetchRequest<Person> = Person.fetchRequest()
-        do{
-        people = try PersistanceServic.context.fetch(fetchRequest)
-
-        }catch{
-            print("error loading previous data !")
-        }
-        
-    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+           if editingStyle == .delete{
+              
+            item = ((person.items?.allObjects[indexPath.row] as AnyObject) as! Item)
+            person.removeFromItems(item)
+            PersistanceServic.saveContext()
+               print("Deleted")
+            self.tableview.reloadData()
+           }
+       }
     
 }

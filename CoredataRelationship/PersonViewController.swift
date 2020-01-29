@@ -16,10 +16,12 @@ class PersonViewController: UIViewController , UITableViewDelegate , UITableView
     @IBOutlet weak var tableview: UITableView!
     let cellIdentifiar : String = "cell"
     var numberOfCellsTable:Int = 0
+    var selectedPerson: Int = 0
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         tableview.delegate = self
         tableview.dataSource = self
         let fetchRequest : NSFetchRequest<Person> = Person.fetchRequest()
@@ -48,17 +50,24 @@ class PersonViewController: UIViewController , UITableViewDelegate , UITableView
         cell.textLabel?.text =  people[indexPath.row].name
         return cell
     }
-//       func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        print( people[indexPath.row].name )
-//
-//          }
+       func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print( people[indexPath.row].name )
+        selectedPerson = indexPath.row
+        self.performSegue(withIdentifier: "personDetails", sender: self)
+
+          }
     func addPerson()  {
+
+        let item1 = Item(context: PersistanceServic.context)
+        item1.name = "123"
+        let item2 = Item(context: PersistanceServic.context)
+        item2.name = "456"
         let person1 = Person(context: PersistanceServic.context)
-        person1.name = "test"
+        person1.name = "abc"
+        person1.addToItems(item1)
+        person1.addToItems(item2)
         PersistanceServic.saveContext()
-        let person2 = Person(context: PersistanceServic.context)
-        person2.name = "test 2"
-        PersistanceServic.saveContext()
+
 
     }
     func addItem()  {
@@ -101,7 +110,11 @@ class PersonViewController: UIViewController , UITableViewDelegate , UITableView
         }
     }
 
+        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let ItemViewController = segue.destination as? ItemViewController else {return}
+            ItemViewController.person = people[selectedPerson]
 
+    }
   
     
 }
